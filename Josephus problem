@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{ int n,k;
+
+cout<<"Enter the no. of people:";
+cin>>n;
+cout<<"Enter the step value i.e k :";
+cin>>k;
+int used[100]={0};
+int count =n;
+int index=0;
+int step =0;
+while(count>1){
+    if(used[index]==0){
+    step ++;
+    if(step==k){
+        used[index]=1;
+        cout<<"Eliminated"<<index+1<<endl;
+        count--;
+        step=0;
+        }
+}
+    index=(index+1)%n;
+}
+ for(int i=0;i<n;i++){
+ if(used[i]==0){
+   cout<<"Survivor="<<i+1<<endl;
+ }
+ }
+ return 0;
+ }
